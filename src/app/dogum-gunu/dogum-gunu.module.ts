@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { BirthdayListComponent } from './birthday-list/birthday-list.component';
+import { BirthdayCalendarComponent } from './birthday-calendar/birthday-calendar.component';
 
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
@@ -10,8 +12,17 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+
+FullCalendarModule.registerPlugins([
+  dayGridPlugin,
+  interactionPlugin
+]);
+
 @NgModule({
-  declarations: [BirthdayListComponent],
+  declarations: [BirthdayListComponent, BirthdayCalendarComponent],
   imports: [
     CommonModule,
     ButtonModule,
@@ -20,7 +31,8 @@ import { InputTextModule } from 'primeng/inputtext';
     DialogModule,
     CalendarModule,
     InputNumberModule,
-    InputTextModule
+    InputTextModule,
+    FullCalendarModule
   ],
   exports: [BirthdayListComponent]
 })

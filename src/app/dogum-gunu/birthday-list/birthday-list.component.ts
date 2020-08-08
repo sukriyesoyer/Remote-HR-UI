@@ -154,7 +154,7 @@ export class BirthdayListComponent implements OnInit {
   }
 
   gotoList() {
-    // this.router.navigate(['/list']);
+    this.router.navigate(['/birthday-list']);
     this.refreshPage();
   }
 

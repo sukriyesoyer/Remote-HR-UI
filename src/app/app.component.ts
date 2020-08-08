@@ -25,7 +25,8 @@ export class AppComponent {
           },
           {
             label: 'Takvim Görünümü',
-            icon: 'pi pi-calendar pi-align-right'
+            icon: 'pi pi-calendar pi-align-right',
+            routerLink:'/birthday-calendar'
           },
         ]
       },
