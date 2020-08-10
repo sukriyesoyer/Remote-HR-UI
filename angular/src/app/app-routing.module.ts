@@ -8,7 +8,7 @@ import { ToplantiOdasiUpdateComponent } from './toplanti-odasi/toplanti-odasi-up
 import { BirthdayListComponent } from './dogum-gunu/birthday-list/birthday-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/Meeting', pathMatch: 'full' },
+  // { path: '', redirectTo: '/meeting', pathMatch: 'full' },
   { path: 'meeting', loadChildren: './toplanti-odasi/toplanti-odasi.module#ToplantiOdasiModule' },
   { path: 'meeting-create', component: ToplantiOdasiCreateComponent },
   { path: 'meeting-list', component: ToplantiOdasiListComponent },

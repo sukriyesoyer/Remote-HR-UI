@@ -2,14 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-
 import { CalendarOptions } from '@fullcalendar/angular';
 import trLocale from '@fullcalendar/core/locales/tr';
-
 import { Birthday } from '../birthday-model/birthday';
 import { BirthdayService } from 'src/app/services/birthday.service';
-
-
 
 @Component({
   selector: 'app-birthday-calendar',

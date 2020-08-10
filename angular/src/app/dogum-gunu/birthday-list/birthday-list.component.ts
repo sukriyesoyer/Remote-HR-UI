@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
-
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { Birthday } from './../birthday-model/birthday'
 import { BirthdayService } from './../../services/birthday.service'
 
