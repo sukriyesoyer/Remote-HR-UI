@@ -1,0 +1,32 @@
+<style>
+    h1{
+        font-size: 50px;
+        text-align: center;
+    }
+</style>
+<h1>Table List</h1>
+<p-table [value]="lists">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Chair Num</th>
+            <th>Table No</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-car>
+        <tr>
+            <td>{{list.id}}</td>
+            
+            <td>
+                <button pButton pRipple type="submit" label="DELETE" class="p-button-danger"></button>
+                <button style="margin-left: 10px;" pButton pRipple type="submit" label="DETAIL" class="p-button-primary"></button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="footer" let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{col.header}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
