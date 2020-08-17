@@ -39,7 +39,12 @@ export class AppComponent {
             routerLink:'/meeting-create'
           },
           {
-            label: 'Toplantı Listele',
+            label: 'Toplantı Güncelle',
+            icon: 'pi pi-spinner pi-align-left',
+            routerLink:'/meeting-update'
+          },
+          {
+            label: 'Toplantıları Listele',
             icon: 'pi pi-list pi-align-right',
             routerLink:'/meeting-list'
           },

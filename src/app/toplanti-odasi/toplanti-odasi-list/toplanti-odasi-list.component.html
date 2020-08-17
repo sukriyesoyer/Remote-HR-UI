@@ -1,1 +1,64 @@
-<p>toplanti-odasi-list works!</p>
+
+<div class="p-grid">
+    <div class="p-col-12 p-md-12 p-lg-4">
+            <h4 class="p-ml-2">Toplantı Odası Rezervasyon Sistemi</h4>  
+            <button pButton pRipple type="Toplantılar" label="Toplantılar" class="p-button-primary"></button>  
+            <hr class="p-ml-2 p-mr-2">
+            <div *ngFor="let toplantiodasi of toplantiodasi | async">
+                <div class="toplanti-odasi-item p-ml-3">
+                    <div class="toplanti-odasi-list-detail">
+                        <p class="p-mb-1"><i class="pi pi-user toplanti-odasi-icon"></i>{{toplantiodasi.salon}}</p>
+                        <i class="pi pi-calendar toplanti-odasi-icon"></i>
+                        <p class="p-mb-1"><i class="pi pi-user toplanti-odasi-icon"></i>{{toplantiodasi.konu}}</p>
+                        <i class="pi pi-calendar toplanti-odasi-icon"></i>
+                        <span class="toplantiodasi-tarih">{{toplantiodasi.tarih | date:'dd.MM.yyyy'}}</span>
+                    </div>
+                    <div class="toplanti-odasi-list-action p-mr-5">
+                        <span class="p-buttonset">
+                            <button pButton pRipple label="Sil" icon="pi pi-trash"
+                                class="p-button-rounded p-button-danger"
+                                (click)="deleteToplantiOdasi(toplantiodasi.id)"></button>
+                            <button pButton pRipple label="Güncelle" icon="pi pi-pencil"
+                                class="p-button-rounded p-button-danger"
+                                (click)="updateToplantiOdasi(toplantiodasi.id)"></button>
+                        </span>
+                    </div>
+                    
+<div class="p-text-center">
+    <p-button (click)="showBasicDialog()" icon="pi pi-plus" label="Toplantı Güncelle"></p-button>
+</div>
+
+<p-dialog header="Toplantı Güncelle" [(visible)]="modalAdd" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <hr>
+    <form #toplantiodasiAddForm="ngForm" (ngSubmit)="onSubmitUpdate()">
+        <div class="p-fluid">
+            <div class="p-field p-col-12">
+                <label for="salon">Yeni Salonu Giriniz</label><br>
+                <input type="text" maxlength="25" pInputText id="salon" placeholder="Yeni Salon giriniz" #salon="ngModel"
+                    [(ngModel)]="toplantiodasi.salon" name="salon" required />
+            </div>
+        </div>
+        <div class="p-fluid">
+            <div class="p-field p-col-12">
+                <label for="konu">Yeni Konu Giriniz</label><br>
+                <input type="text" maxlength="25" pInputText id="konu" placeholder="Yeni Konu giriniz" #konu="ngModel"
+                    [(ngModel)]="toplantiodasi.konu" name="konu" required />
+            </div>
+        </div>
+
+        <div class="p-fluid">
+            <div class="p-field p-col-12">
+                <label for="tarih">Yeni Toplantı Tarihi Giriniz</label>
+                
+                    <input type="text" maxlength="25" pInputText id="tarih" placeholder="Yeni Toplantı Tarihi giriniz"
+                        #tarih="ngModel"   [(ngModel)]="toplantiodasi.tarih" name="tarih" required />
+               
+            </div>
+        </div>
+
+        <div class="p-text-right p-mr-2">
+            <p-button type="submit" icon="pi pi-check" label="Güncelle" class="p-button-text"
+                [disabled]="toplantiodasiAddForm.invalid"></p-button>
+        </div>
+    </form>
+</p-dialog>
