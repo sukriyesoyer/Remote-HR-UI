@@ -9,7 +9,6 @@ import { ToplantiOdasi } from '../toplantiodasi-model/toplantiodasi'
 })
 export class ToplantiOdasiCreateComponent implements OnInit {
   toplantiodasi: ToplantiOdasi = new ToplantiOdasi();
-  modalAdd: boolean;
   calendarLocateTr: any;
   constructor(
     //private toplantiodasiService: ToplantiodasiService,
@@ -52,10 +51,6 @@ export class ToplantiOdasiCreateComponent implements OnInit {
   }
   onSubmitSave() {
     this.save();
-  }
-
-  showBasicDialog() {
-    this.modalAdd = true;
   }
   
 

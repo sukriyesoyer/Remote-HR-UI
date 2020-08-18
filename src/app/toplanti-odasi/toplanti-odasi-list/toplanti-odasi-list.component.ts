@@ -16,7 +16,7 @@ export class ToplantiOdasiListComponent implements OnInit {
   //  private alertifyService: AlertifyService,
     private router: Router
   ) {}
-
+    
   ngOnInit(): void {
     this.reloadData();
   }
