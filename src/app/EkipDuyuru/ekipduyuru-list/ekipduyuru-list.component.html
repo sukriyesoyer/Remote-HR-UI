@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Ekip Duyuru Liste</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Ekip</th>
+            <th>Duyuru</th>
+            <th>Tarih</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ekipduyuru of ekipduyuru | async">
+            <td>{{ekipduyuru.ekip}}</td>
+            <td>{{ekipduyuru.duyuru}}</td>
+            <td>{{ekipduyuru.tarih | date:'yyyy-MM-dd'}}</td>
+            <td><button (click)="deleteEkipDuyuru(ekipduyuru.id)" class="btn btn-danger">Sil</button>
+                <button (click)="updateEkipDuyuru(ekipduyuru.id)" class="btn btn-info" style="margin-left: 10px">Güncelle</button>
+                
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
