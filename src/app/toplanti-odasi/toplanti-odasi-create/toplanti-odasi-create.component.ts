@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToplantiOdasi } from '../toplantiodasi-model/toplantiodasi'
+import { ToplantiOdasi } from '../toplantiodasi-model/toplantiodasi';
+import { ToplantiOdasiService } from './../../services/toplanti-odasi.service';
 
 @Component({
   selector: 'app-toplanti-odasi-create',
@@ -11,8 +12,8 @@ export class ToplantiOdasiCreateComponent implements OnInit {
   toplantiodasi: ToplantiOdasi = new ToplantiOdasi();
   calendarLocateTr: any;
   constructor(
-    //private toplantiodasiService: ToplantiodasiService,
-    //private alertifyService: AlertifyService,
+    private toplantiodasiService: ToplantiOdasiService,
+  
     private router: Router
   ) { }
 
@@ -41,17 +42,18 @@ export class ToplantiOdasiCreateComponent implements OnInit {
 
 
   save() {
-    //    this.toplantiodasiService.createToplantiOdasi(this.toplantiodasi).subscribe(
-    //    (data) => {
-    // this.alertifyService.success(this.toplantiodasi.salon + ' başarıyla eklendi.');
-    //  },
-    //  (error) => console.log(error)
-    // );
+        this.toplantiodasiService.createToplantiOdasi(this.toplantiodasi).subscribe(
+        (data) => {
+  
+      },
+      (error) => console.log(error)
+     );
 
   }
   onSubmitSave() {
     this.save();
   }
+
   
 
 }

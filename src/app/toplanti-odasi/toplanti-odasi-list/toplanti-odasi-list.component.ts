@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ToplantiOdasi } from '../toplantiodasi-model/toplantiodasi'
+import { ToplantiOdasi } from '../toplantiodasi-model/toplantiodasi';
+import { ToplantiOdasiService } from './../../services/toplanti-odasi.service';
 
 @Component({
   selector: 'app-toplanti-odasi-list',
@@ -12,8 +13,8 @@ export class ToplantiOdasiListComponent implements OnInit {
   toplantiodasi: Observable<ToplantiOdasi[]>;
   modalAdd: boolean;
   constructor(
-  //  private toplantiodasiService: ToplantiodasiService,
-  //  private alertifyService: AlertifyService,
+    private toplantiodasiService: ToplantiOdasiService,
+  
     private router: Router
   ) {}
     
@@ -21,17 +22,17 @@ export class ToplantiOdasiListComponent implements OnInit {
     this.reloadData();
   }
   reloadData() {
-    //this.toplantiodasi = this.toplantiodasiService.gettoplantiodasiList();
+    this.toplantiodasi = this.toplantiodasiService.gettoplantiodasiList();
   }
 
   deleteToplantiOdasi(id: number) {
-  //  this.toplantiodasiService.deleteToplantiOdasi(id).subscribe(
-   //   (data) => {
-        // this.alertifyService.error('Toplantı başarıyla silindi.');
-    //    this.reloadData();
-     // },
-     // (error) => console.log(error)
-   // );
+    this.toplantiodasiService.deleteToplantiOdasi(id).subscribe(
+      (data) => {
+        
+        this.reloadData();
+      },
+      (error) => console.log(error)
+    );
   }
 
   updateToplantiOdasi(id: number) {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EkipDuyuru } from '../ekipduyuru/ekipduyuru';
-import { EkipduyuruService } from '../ekipduyuru.service';
-import { AlertifyService } from '../alertify-service.service';
+import { EkipDuyuru } from '../ekipduyuru-model/ekipduyuru';
+//import { EkipduyuruService } from '../ekipduyuru.service';
+//import { AlertifyService } from '../alertify-service.service';
 
 @Component({
   selector: 'app-create-ekipduyuru',
@@ -14,8 +14,8 @@ export class CreateEkipDuyuruComponent implements OnInit {
   submitted = false;
 
   constructor(
-    private ekipduyuruService: EkipduyuruService,
-    private alertifyService: AlertifyService,
+  //  private ekipduyuruService: EkipduyuruService,
+  //  private alertifyService: AlertifyService,
     private router: Router
   ) {}
 
@@ -31,12 +31,12 @@ export class CreateEkipDuyuruComponent implements OnInit {
 
 
   save() {
-    this.ekipduyuruService.createEkipDuyuru(this.ekipduyuru).subscribe(
-      (data) => {
+    //this.ekipduyuruService.createEkipDuyuru(this.ekipduyuru).subscribe(
+    //  (data) => {
         // this.alertifyService.success(this.ekipduyuru.ekip + ' başarıyla eklendi.');
-      },
-      (error) => console.log(error)
-    );
+      //},
+     // (error) => console.log(error)
+   // );
    
   }
 

@@ -46,6 +46,54 @@ export class AppComponent {
         ]
       },
       {
+        label: 'Ekip Duyuruları',
+        icon: 'pi pi-th-large pi-pencil', 
+        items: [
+          {
+            label: 'Duyuru Ekle',
+            icon: 'pi pi-plus pi-align-left',
+            routerLink:'/team-create'
+          },
+          {
+            label: 'Duyuru Listele',
+            icon: 'pi pi-list pi-align-right',
+            routerLink:'/team-list'
+          },
+        ]
+      },
+      {
+        label: 'Servis Rezervasyon',
+        icon: 'pi pi-th-large pi-pencil', 
+        items: [
+          {
+            label: 'Servis Ekle',
+            icon: 'pi pi-plus pi-align-left',
+            routerLink:'/reservation-add'
+          },
+          {
+            label: 'Servis Listele',
+            icon: 'pi pi-list pi-align-right',
+            routerLink:'/reservation-list'
+          },
+        ]
+      },
+      {
+        label: 'Şirket İçi Duyurular',
+        icon: 'pi pi-th-large pi-pencil', 
+        items: [
+          {
+            label: 'Duyuru Ekle',
+            icon: 'pi pi-plus pi-align-left',
+            routerLink:'/announcement-add'
+          },
+          {
+            label: 'Duyuru Listele',
+            icon: 'pi pi-list pi-align-right',
+            routerLink:'/announcement-list'
+          },
+        ]
+      },
+      {
         label: 'Çıkış',
         icon: 'pi pi-fw pi-power-off'
       }

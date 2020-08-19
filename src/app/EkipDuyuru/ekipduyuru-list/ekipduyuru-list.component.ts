@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { EkipDuyuru } from './../ekipduyuru/ekipduyuru';
-import { EkipduyuruService } from './../ekipduyuru.service';
-import { AlertifyService } from './../alertify-service.service';
+import { EkipDuyuru } from './../ekipduyuru-model/ekipduyuru';
+//import { EkipduyuruService } from './../ekipduyuru.service';
+//import { AlertifyService } from './../alertify-service.service';
 
 @Component({
   selector: 'app-ekipduyuru-list',
@@ -13,8 +13,8 @@ import { AlertifyService } from './../alertify-service.service';
 export class EkipduyuruListComponent implements OnInit {
   ekipduyuru: Observable<EkipDuyuru[]>;
   constructor(
-    private ekipduyuruService: EkipduyuruService,
-    private alertifyService: AlertifyService,
+  //  private ekipduyuruService: EkipduyuruService,
+  //  private alertifyService: AlertifyService,
     private router: Router
   ) {}
 
@@ -22,17 +22,17 @@ export class EkipduyuruListComponent implements OnInit {
     this.reloadData();
   }
   reloadData() {
-    this.ekipduyuru = this.ekipduyuruService.getekipduyuruList();
+    //this.ekipduyuru = this.ekipduyuruService.getekipduyuruList();
   }
 
   deleteEkipDuyuru(id: number) {
-    this.ekipduyuruService.deleteEkipDuyuru(id).subscribe(
-      (data) => {
+    //this.ekipduyuruService.deleteEkipDuyuru(id).subscribe(
+    //  (data) => {
         // this.alertifyService.error('Duyuru başarıyla silindi.');
-        this.reloadData();
-      },
-      (error) => console.log(error)
-    );
+    //    this.reloadData();
+     // },
+     // (error) => console.log(error)
+   // );
   }
 
   updateEkipDuyuru(id: number) {
