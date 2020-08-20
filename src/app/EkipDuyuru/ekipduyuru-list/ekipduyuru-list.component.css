@@ -55,7 +55,6 @@ div {
     line-height: 1;
   }
   
-    
   @media screen and (max-width: 576px) {
     .ekipduyuru-item {
       flex-wrap: wrap;

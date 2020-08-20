@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { EkipDuyuru } from './../ekipduyuru/ekipduyuru';
-import { AlertifyService } from './../alertify-service.service';
-import { EkipduyuruService } from './../ekipduyuru.service';
+import { EkipDuyuru } from './../ekipduyuru-model/ekipduyuru';
+import { EkipduyuruService } from './../../services/ekipduyuru.service';
 
 
 @Component({
@@ -14,11 +13,12 @@ export class EkipduyuruUpdateComponent implements OnInit {
 
   id: number;
   ekipduyuru: EkipDuyuru;
+  modalAdd: boolean;
+  calendarLocateTr: any;
   
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private alertifyService: AlertifyService,
     private ekipduyuruService: EkipduyuruService
   ) {}
 
@@ -33,21 +33,27 @@ export class EkipduyuruUpdateComponent implements OnInit {
       (error) => console.log(error)
     );
   }
-
-  updateEkipDuyuru() {
-    this.ekipduyuruService.updateEkipDuyuru(this.id, this.ekipduyuru).subscribe(
-      (data) => {
-        // this.alertifyService.warning(
-        //   this.ekipduyuru.ekip+ ' başarıyla güncellendi.'
-        // );
-      },
-      (error) => console.log(error)
-    );
-
+reloadCalendarData() {
+    this.calendarLocateTr = {
+      firstDayOfWeek: 1,
+      dayNames: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
+      dayNamesShort: ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"],
+      dayNamesMin: ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"],
+      monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+      monthNamesShort: ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"],
+      today: 'Bugün',
+      clear: 'Temizle'
+    }
   }
 
-  onSubmit() {
-    this.updateEkipDuyuru();
+ update() {
+  }
+  onSubmitUpdate() {
+    this.update();
+  }
+
+  showBasicDialog() {
+    this.modalAdd = true;
   }
 
 }

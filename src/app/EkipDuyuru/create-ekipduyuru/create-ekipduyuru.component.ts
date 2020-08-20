@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EkipDuyuru } from '../ekipduyuru-model/ekipduyuru';
-//import { EkipduyuruService } from '../ekipduyuru.service';
-//import { AlertifyService } from '../alertify-service.service';
+import { EkipduyuruService } from './../../services/ekipduyuru.service';
 
 @Component({
   selector: 'app-create-ekipduyuru',
@@ -14,29 +13,41 @@ export class CreateEkipDuyuruComponent implements OnInit {
   submitted = false;
 
   constructor(
-  //  private ekipduyuruService: EkipduyuruService,
-  //  private alertifyService: AlertifyService,
+   private ekipduyuruService: EkipduyuruService,
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+	      this.reloadCalendarData();
 
-
-
-  newProduct(): void {
-    this.submitted = false;
-    this.ekipduyuru = new EkipDuyuru();
   }
 
 
 
+  newProduct(): void {
+    this.ekipduyuru = new EkipDuyuru();
+  }
+
+reloadCalendarData() {
+    this.calendarLocateTr = {
+      firstDayOfWeek: 1,
+      dayNames: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
+      dayNamesShort: ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"],
+      dayNamesMin: ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"],
+      monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+      monthNamesShort: ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"],
+      today: 'Bugün',
+      clear: 'Temizle'
+    }
+  }
+
+
   save() {
-    //this.ekipduyuruService.createEkipDuyuru(this.ekipduyuru).subscribe(
-    //  (data) => {
-        // this.alertifyService.success(this.ekipduyuru.ekip + ' başarıyla eklendi.');
-      //},
-     // (error) => console.log(error)
-   // );
+    this.ekipduyuruService.createEkipDuyuru(this.ekipduyuru).subscribe(
+    (data) => {
+      },
+     (error) => console.log(error)
+  );
    
   }
 
@@ -49,6 +60,3 @@ export class CreateEkipDuyuruComponent implements OnInit {
 
 
 }
-
-
-
