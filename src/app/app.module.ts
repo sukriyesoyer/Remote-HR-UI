@@ -1,3 +1,4 @@
+import { KullaniciYonetimiModule } from './kullanici-yonetimi/kullanici-yonetimi.module';
 import { DogumGunuModule } from './dogum-gunu/dogum-gunu.module';
 import { ToplantiOdasiModule } from './toplanti-odasi/toplanti-odasi.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,7 +20,8 @@ import { MenubarModule } from 'primeng/menubar';
     BrowserAnimationsModule,
     DogumGunuModule,
     ToplantiOdasiModule,
-    MenubarModule
+    MenubarModule,
+    KullaniciYonetimiModule
   ],
   providers: [],
   bootstrap: [AppComponent]

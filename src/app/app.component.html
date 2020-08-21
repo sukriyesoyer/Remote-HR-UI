@@ -1,2 +1,4 @@
-<p-menubar [model]="items"></p-menubar>
+<div *ngIf="currentUser">
+    <p-menubar [model]="items"></p-menubar>
+</div>
 <router-outlet></router-outlet>
