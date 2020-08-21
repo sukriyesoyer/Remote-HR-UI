@@ -1,4 +1,5 @@
 import { DogumGunuModule } from './dogum-gunu/dogum-gunu.module';
+import { AnnouncementModule } from './announcement/announcement.module';
 import { ToplantiOdasiModule } from './toplanti-odasi/toplanti-odasi.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenubarModule } from 'primeng/menubar';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { MenubarModule } from 'primeng/menubar';
     BrowserAnimationsModule,
     DogumGunuModule,
     ToplantiOdasiModule,
-    MenubarModule
+    MenubarModule,
+    AnnouncementModule
   ],
   providers: [],
   bootstrap: [AppComponent]
