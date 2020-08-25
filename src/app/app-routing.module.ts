@@ -7,6 +7,8 @@ import { ToplantiOdasiListComponent } from './toplanti-odasi/toplanti-odasi-list
 import { BirthdayListComponent } from './dogum-gunu/birthday-list/birthday-list.component';
 import { AnnouncementAddComponent} from './announcement/announcement-add/announcement-add.component';
 import { AnnouncementListComponent} from './announcement/announcement-list/announcement-list.component';
+import { ReservationAddComponent} from './reservation/reservation-add/reservation-add.component';
+import { ReservationListComponent} from './reservation/reservation-list/reservation-list.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
 
   { path: 'announcement-add', component: AnnouncementAddComponent },
   { path: 'announcement-list', component: AnnouncementListComponent },
+  { path: 'reservation-add', component: ReservationAddComponent },
+  { path: 'reservation-list', component: ReservationListComponent }
 
 ];
 
