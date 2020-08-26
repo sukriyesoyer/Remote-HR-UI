@@ -9,6 +9,7 @@ import { AnnouncementAddComponent} from './announcement/announcement-add/announc
 import { AnnouncementListComponent} from './announcement/announcement-list/announcement-list.component';
 import { ReservationAddComponent} from './reservation/reservation-add/reservation-add.component';
 import { ReservationListComponent} from './reservation/reservation-list/reservation-list.component';
+import { ToplantiOdasiUpdateComponent } from './toplanti-odasi/toplanti-odasi-update/toplanti-odasi-update.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'meeting', loadChildren: './toplanti-odasi/toplanti-odasi.module#ToplantiOdasiModule' },
   { path: 'meeting-create', component: ToplantiOdasiCreateComponent },
   { path: 'meeting-list', component: ToplantiOdasiListComponent },
+  { path: 'meeting-update/:id', component: ToplantiOdasiUpdateComponent },
+  
   { path: 'birthday-list', component: BirthdayListComponent },
   { path: 'birthday-calendar', component: BirthdayCalendarComponent },
 

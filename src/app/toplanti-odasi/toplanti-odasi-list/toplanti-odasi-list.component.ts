@@ -36,7 +36,7 @@ export class ToplantiOdasiListComponent implements OnInit {
   }
 
   updateToplantiOdasi(id: number) {
-    this.router.navigate(['/toplantiodasi-update', id]);
+    this.router.navigate(['/meeting-update', id]);
   }
   showBasicDialog() {
     this.modalAdd = true;

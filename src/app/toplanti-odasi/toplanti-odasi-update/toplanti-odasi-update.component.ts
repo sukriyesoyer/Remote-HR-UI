@@ -55,8 +55,16 @@ export class ToplantiOdasiUpdateComponent implements OnInit {
     }
   }
 
-  update() {
+  update() { this.toplantiodasiService.updateToplantiOdasi(this.id, this.toplantiodasi).subscribe(
+    (data) => {
+      
+    },
+    (error) => console.log(error)
+  );
   }
+
+
+
   onSubmitUpdate() {
     this.update();
   }

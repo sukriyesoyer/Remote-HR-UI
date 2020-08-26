@@ -6,9 +6,8 @@
             <div *ngFor="let toplantiodasi of toplantiodasi | async">
                 <div class="toplanti-odasi-item p-ml-3">
                     <div class="toplanti-odasi-list-detail">
-                        <p class="p-mb-1"><i class="pi pi-user toplanti-odasi-icon"></i>{{toplantiodasi.salon}}</p>
-                        <i class="pi pi-calendar toplanti-odasi-icon"></i>
-                        <p class="p-mb-1"><i class="pi pi-user toplanti-odasi-icon"></i>{{toplantiodasi.konu}}</p>
+                        <p class="p-mb-1"><i class="pi pi-align-justify toplanti-odasi-icon"></i>{{toplantiodasi.salon}}</p>
+                        <p class="p-mb-1"><i class="pi pi-align-justify toplanti-odasi-icon"></i>{{toplantiodasi.konu}}</p>
                         <i class="pi pi-calendar toplanti-odasi-icon"></i>
                         <span class="toplantiodasi-tarih">{{toplantiodasi.tarih | date:'dd.MM.yyyy'}}</span>
                     </div>
@@ -17,7 +16,7 @@
                             <button pButton pRipple label="Sil" icon="pi pi-trash"
                                 class="p-button-rounded p-button-danger"
                                 (click)="deleteToplantiOdasi(toplantiodasi.id)"></button>
-                            <button pButton pRipple label="Güncelle" icon="pi pi-pencil"
+                            <button pButton pRipple label="Güncelle" icon="pi pi-spinner"
                                 class="p-button-rounded p-button-danger"
                                 (click)="updateToplantiOdasi(toplantiodasi.id)"></button>
                         </span>
