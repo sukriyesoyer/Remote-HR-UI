@@ -10,6 +10,9 @@ import { AnnouncementListComponent} from './announcement/announcement-list/annou
 import { ReservationAddComponent} from './reservation/reservation-add/reservation-add.component';
 import { ReservationListComponent} from './reservation/reservation-list/reservation-list.component';
 import { ToplantiOdasiUpdateComponent } from './toplanti-odasi/toplanti-odasi-update/toplanti-odasi-update.component';
+import { CreateEducationComponent } from './education/create-education/create-education.component';
+import { EducationListComponent } from './education/education-list/education-list.component';
+import { UpdateEducationComponent } from './education/update-education/update-education.component';
 
 
 const routes: Routes = [
@@ -25,7 +28,10 @@ const routes: Routes = [
   { path: 'announcement-add', component: AnnouncementAddComponent },
   { path: 'announcement-list', component: AnnouncementListComponent },
   { path: 'reservation-add', component: ReservationAddComponent },
-  { path: 'reservation-list', component: ReservationListComponent }
+  { path: 'reservation-list', component: ReservationListComponent },
+  { path: 'education-add', component: CreateEducationComponent },
+  { path: 'education-list', component: EducationListComponent },
+  { path: 'education-update/:id', component: UpdateEducationComponent }
 
 ];
 

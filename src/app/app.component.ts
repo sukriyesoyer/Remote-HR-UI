@@ -46,6 +46,22 @@ export class AppComponent {
         ]
       },
       {
+        label: 'Eğitimler',
+        icon: 'pi pi-th-large pi-pencil', 
+        items: [
+          {
+            label: 'Eğitim Ekle',
+            icon: 'pi pi-plus pi-align-left',
+            routerLink:'/education-add'
+          },
+          {
+            label: 'Eğitimleri Listele',
+            icon: 'pi pi-list pi-align-right',
+            routerLink:'/education-list'
+          },
+        ]
+      },
+      {
         label: 'Ekip Duyuruları',
         icon: 'pi pi-th-large pi-pencil', 
         items: [
